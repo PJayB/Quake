@@ -1,3 +1,25 @@
+=== QUAKE in 4K ===
+
+Happy 20th Birthday, Quake.
+
+I have added support for more resolution modes, enabling 4K support.
+
+This version also behaves correctly on high-DPI monitors.
+
+To run at 4K, run with '-width 4096 -height 2160' (or whatever your native resolution is.)
+
+If you are running the built executable, make sure to drop it in your Quake directory. If you are running from Visual Studio:
+* Build Release GL,
+* Set your Project Properties > Debugging > Working directory to your Quake installation directory,
+* Set the Command Arguments as specified above.
+
+This source code is cloned from Azariens' SoftQuake port: https://github.com/Azarien/SoftQuake
+
+Enjoy,
+P.
+
+
+=== ORIGINAL README ===
 
 This is the complete source code for winquake, glquake, quakeworld, and 
 glquakeworld.
