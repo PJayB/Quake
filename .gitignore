@@ -26,3 +26,5 @@ Release GL
 *.sdf
 *.ipch
 *.opensdf
+*.opendb
+*.db
