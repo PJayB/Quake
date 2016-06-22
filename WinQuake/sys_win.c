@@ -26,6 +26,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "conproc.h"
 #include "txt.h"
 
+// Needed for SetProcessDpiAwareness (Windows 8.1+ only)
+#if _WIN32_WINNT >= _WIN32_WINNT_WINBLUE
+#   include <ShellScalingApi.h>
+#endif
+
 #define MINIMUM_WIN_MEMORY		0x0880000
 #define MAXIMUM_WIN_MEMORY		0x1000000
 
@@ -713,7 +718,12 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
     if (hPrevInstance)
         return 0;
 
-	global_hInstance = hInstance;
+    // Prevent scaling on high-DPI monitors (Windows 8.1+ only)
+#if _WIN32_WINNT >= _WIN32_WINNT_WINBLUE
+    SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
+#endif
+
+    global_hInstance = hInstance;
 	global_nCmdShow = nCmdShow;
 
 	lpBuffer.dwLength = sizeof(MEMORYSTATUS);
