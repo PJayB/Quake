@@ -2,16 +2,16 @@
 
 Happy 20th Birthday, Quake.
 
-I have added support for more resolution modes, enabling 4K support.
+I have added support for more resolution modes, enabling 4K support. This version also behaves correctly on high-DPI monitors.
 
-This version also behaves correctly on high-DPI monitors.
-
-To run at 4K, run with '-width 4096 -height 2160' (or whatever your native resolution is.)
-
-If you are running the built executable, make sure to drop it in your Quake directory. If you are running from Visual Studio:
+To build, you will need Visual Studio 2015 and Windows 8.1 or higher.
+* Load WinQuake_v14.sln,
 * Build Release GL,
 * Set your Project Properties > Debugging > Working directory to your Quake installation directory,
-* Set the Command Arguments as specified above.
+* Set the Command Arguments to '-width 4096 -height 2160' (or whatever your native resolution is,)
+* Run.
+
+If you are running the built executable, make sure to drop it in your Quake directory. 
 
 This source code is cloned from Azariens' SoftQuake port: https://github.com/Azarien/SoftQuake
 
